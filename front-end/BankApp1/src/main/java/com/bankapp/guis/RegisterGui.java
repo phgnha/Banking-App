@@ -2,7 +2,7 @@ package main.java.com.bankapp.guis;
 
 import javax.swing.*;
 
-import main.java.com.objs.MyJDBC;
+import main.java.com.objs.Service;
 import main.java.com.objs.User;
 
 import java.awt.*;

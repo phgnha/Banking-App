@@ -55,4 +55,11 @@ public class UserController {
         userService.updateBalance(userId, newBalance);
         return ResponseEntity.ok("Balance updated successfully");
     }
+    
+    @PostMapping("/{userId}/check-otp")
+    public ResponseEntity<String> checkOTP(@PathVariable Long userId, @RequestParam String otp) {
+    boolean isValid = userService.checkOTP(userId, otp);
+    return isValid ? ResponseEntity.ok("OTP is valid") : ResponseEntity.badRequest().body("Invalid OTP");
+}
+    
 }

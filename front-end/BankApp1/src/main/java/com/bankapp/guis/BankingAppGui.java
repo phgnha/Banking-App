@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import main.java.com.bankapp.guis.CurrentBalanceDialog;
-import main.java.com.objs.MyJDBC;
+import main.java.com.objs.Service;
 import main.java.com.objs.Transaction;
 import main.java.com.objs.User;
 
@@ -374,7 +374,7 @@ public class BankingAppGui extends javax.swing.JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         String buttonPressed=e.getActionCommand();
         if(buttonPressed.equals("Thống kê")){
-            List<Transaction> tmp= MyJDBC.getPastTransactions((long)user.getId());
+            List<Transaction> tmp= Service.getPastTransactions((long)user.getId());
             Collections.reverse(tmp);
             SpendingChart chart = new SpendingChart(tmp);
             chart.setVisible(true);

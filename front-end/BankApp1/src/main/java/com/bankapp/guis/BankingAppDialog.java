@@ -28,7 +28,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import main.java.com.objs.MyJDBC;
+import main.java.com.objs.Service;
 import main.java.com.objs.Transaction;
 import main.java.com.objs.User;
 
@@ -183,7 +183,7 @@ public class BankingAppDialog extends JDialog implements ActionListener
         scrollPane.setBounds(0, 20, getWidth() - 15, getHeight() - 80);
 
         // perform db call to retrieve all of the past transaction and store into array list
-        pastTransactionList = MyJDBC.getPastTransactions((long)user.getId());
+        pastTransactionList = Service.getPastTransactions((long)user.getId());
 
         // iterate through the list and add to the gui
         for(int i = 0; i <pastTransactionList.size() ; i++){
@@ -241,7 +241,7 @@ public class BankingAppDialog extends JDialog implements ActionListener
             //set the amount negative to show sign of withdraw
             transaction =new Transaction(user.getId(),trans_type,new BigDecimal(-amount),null);
         }
-         if(MyJDBC.addTransaction(transaction)&&MyJDBC.updateBalance(user))
+         if(Service.addTransaction(transaction)&&Service.updateBalance(user))
         //if(MyJDBC.updateBalance(user))
         {
             JOptionPane.showMessageDialog(this, trans_type+" thành công");
@@ -267,7 +267,7 @@ public class BankingAppDialog extends JDialog implements ActionListener
     }
     public void handleTransfer(User user,String transferUser,BigDecimal amount)
     {
-        if(MyJDBC.transfer((long) user.getId(), transferUser, amount))
+        if(Service.transfer((long) user.getId(), transferUser, amount))
         {
             JOptionPane.showMessageDialog(this, "Giao dịch thành công");
             resetFieldandUpdate();

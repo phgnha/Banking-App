@@ -4,7 +4,7 @@ import javax.swing.*;
 
 //import org.jfree.data.json.impl.JSONObject;
 
-import main.java.com.objs.MyJDBC;
+import main.java.com.objs.Service;
 import main.java.com.objs.User;
 
 import java.awt.*;

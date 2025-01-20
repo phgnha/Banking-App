@@ -9,7 +9,7 @@ import java.math.BigInteger;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-import main.java.com.objs.MyJDBC;
+import main.java.com.objs.Service;
 import main.java.com.objs.User;
 
 /**
@@ -27,7 +27,7 @@ public class CurrentBalanceDialog extends javax.swing.JDialog {
         super(parent, modal);
         this.user = user;
         initComponents();
-        MyJDBC.getBalance(user);
+        Service.getBalance(user);
         BigInteger balance= user.getCurrentBalance().toBigInteger();
         NumberFormat numberFormat = NumberFormat.getInstance(Locale.GERMANY);
         String formattedBalance = numberFormat.format(balance);
