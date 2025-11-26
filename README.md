@@ -1,4 +1,4 @@
-Phần Back-end của dự án đã được deploy trên Azure Cloud, người dùng chỉ cẩn tải file exe hoặc file jar để chạy và sử dụng giao diện (yêu cầu JDK).
+Phần Back-end của dự án đã được deploy trên Azure Cloud, người dùng chỉ cẩn tải file exe hoặc file jar để chạy và sử dụng giao diện (yêu cầu JDK17+).
 
 # Ứng dụng Ngân hàng
 
@@ -46,7 +46,6 @@ Chạy local:
 3. Tìm và chạy phương thức `main` trong lớp [`AppLauncher`](front-end/BankApp1/src/main/java/com/AppLauncher.java).
 
 ## Ảnh chụp màn hình
-(Bạn có thể bổ sung ảnh chụp màn hình nếu cần)
 
 ![Screenshot 2025-01-22 070659](https://github.com/user-attachments/assets/50e970ec-6363-4637-8ebb-79b81646f015)
 ![Screenshot 2025-01-22 070651](https://github.com/user-attachments/assets/6da512ed-d775-4267-ba33-1a67d1b7e8a6)
